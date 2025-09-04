@@ -7,6 +7,7 @@ class TasaResponse (BaseModel):
   """
   Modelo para la tasa cambiaria
   """
+  moneda: str
   fecha: str
   valor: float
 
@@ -19,7 +20,7 @@ async def obtener_bcv():
   
   try:
     tasa_valor = obtener_tasa.obtener_bcv() #Obtenemos la tasa con la funcion del archivo obtener tasa
-    return {"fecha": fecha_formateada , "valor": tasa_valor} # Retornamos el valor de la tasa del dia de hoy
+    return {"moneda": "USD/$","fecha": fecha_formateada , "valor": tasa_valor} # Retornamos el valor de la tasa del dia de hoy
   except ValueError as e:
     raise HTTPException(status_code= 404, detail=str(e))
   
