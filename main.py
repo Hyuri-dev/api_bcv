@@ -9,6 +9,7 @@ app = FastAPI()
 origins = [
     "http://127.0.0.1:5500",
     "https://fast-bcv-ten.vercel.app/",
+    "https://api-bcv-ekgz.onrender.com"
 ]
 
 app.add_middleware(
@@ -26,6 +27,6 @@ app.include_router(router=tasas.router)
 async def root():
   return {"Bienvenidos al api para consulta del BCV, te recomiendo ingresar a la documentacion para visualizar mejor como funcionan los endpoints :)"}
 
-if __name__ == "__name__":
+if __name__ == "__main__":
   import uvicorn
   uvicorn.run(app, host="0.0.0.0", port=8000)
