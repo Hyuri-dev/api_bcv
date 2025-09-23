@@ -9,7 +9,8 @@ app = FastAPI()
 origins = [
     "http://127.0.0.1:5500",
     "https://fast-bcv-ten.vercel.app/",
-    "https://api-bcv-ekgz.onrender.com"
+    "https://api-bcv-ekgz.onrender.com/tipos-de-tasas/usdbcv",
+    "https://api-bcv-ekgz.onrender.com",
 ]
 
 app.add_middleware(
