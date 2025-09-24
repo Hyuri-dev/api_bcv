@@ -11,6 +11,7 @@ origins = [
     "https://fast-bcv-ten.vercel.app/",
     "https://api-bcv-ekgz.onrender.com/tipos-de-tasas/usdbcv",
     "https://api-bcv-ekgz.onrender.com",
+    "fast-bcv-ten.vercel.app",
 ]
 
 app.add_middleware(
