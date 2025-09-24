@@ -2,6 +2,8 @@ from fastapi import APIRouter , HTTPException
 from pydantic import BaseModel
 import obtener_tasa
 from datetime import datetime
+from fastapi.middleware.cors import CORSMiddleware
+
 
 class TasaResponse (BaseModel):
   """
@@ -12,6 +14,19 @@ class TasaResponse (BaseModel):
   valor: float
 
 router = APIRouter(prefix="/tipos-de-tasas", tags=["Tasas"], responses={404: {"Message": "Not Found/No encontrado"}})
+
+origins = [
+    "http://127.0.0.1:5500",
+    "https://hello-javascript-kappa.vercel.app/",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @router.get("/usdbcv", response_model=TasaResponse)
 async def obtener_bcv():
