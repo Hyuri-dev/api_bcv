@@ -9,11 +9,12 @@ app = FastAPI()
 origins = [
     "http://127.0.0.1:5500",
     "https://hello-javascript-kappa.vercel.app/",
+    "http://hello-javascript-kappa.vercel.app/",
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
