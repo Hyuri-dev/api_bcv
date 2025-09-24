@@ -20,7 +20,7 @@ origins = [
     "https://hello-javascript-kappa.vercel.app/",
 ]
 
-app.add_middleware(
+router.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
